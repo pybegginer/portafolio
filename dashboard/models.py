@@ -33,6 +33,7 @@ class Skills(models.Model):
     name = models.CharField(max_length=255)
     level = models.CharField(choices=LEVEL_CHOICES, max_length=15, blank=True, null=True)
     icon = models.ImageField(upload_to='icons/', max_length=350)
+    percentage = models.PositiveSmallIntegerField(default = 60, null=False, blank=False)
 
     def __str__(self):
         return '{} - Level: {}'.format(self.name, self.get_level_display())

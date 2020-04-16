@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>My Curriculum Page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Bulma Version 0.8.x-->
+    <link rel='stylesheet' href='https://unpkg.com/bulma@0.8.0/css/bulma.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>
+    <link rel='stylesheet' href="{% static 'css/prism.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column is-12">
+            <div class="container content">
+              <a href="{% url 'index' %}">
+              <figure class="image is-128x128">
+                <img class="is-rounded" src={% static 'images/image.jpg'%}>
+              </figure>
+              </a>
+
+              <h1 class="title">Juan Camilo Camargo</h1>
+              <h3 class="subtitle">
+              Ingeniero Electricista UdeA.
+              </h3>
+              <a href="https://github.com/christianbos" target="_blank" class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Github</span>
+              </a>
+              <a href="https://github.com/christianbos" target="_blank" class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-3">
+            <aside class="is-medium menu">
+          <p class="menu-label">
+            categories
+          </p>
+          <ul class="menu-list">
+            <li class="is-right"><a href="{% url 'experiencia' %}" class="is-active">Experiencia</a></li>
+            <li><a href="{% url 'habilidades' %}" class="is-active">Habilidades</a></li>
+            <li><a href="{% url 'educacion' %}" class="is-active">Educación</a></li>
+          </ul>
+            </aside>
+          </div>
+          <div class="column is-9">
+            <div class="content is-medium">
+
+              <!-- inicio del contenido que cambia-->
+              {% block content %} {% endblock content %}
+              <!-- fin del contenido que cambia-->
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<footer class="footer">
+<hr>
+<div class="columns is-mobile is-centered">
+  <div class="field is-grouped is-grouped-multiline">
+    <div class="control">
+      <div class="tags has-addons"><a class="tag is-link" href="https://github.com/BulmaTemplates/bulma-templates">Bulma Templates</a>
+      <span class="tag is-info">MIT license</span>
+    </div>
+  </div>
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">based on a pen</span>
+      <span class="tag has-addons is-warning"><a href="https://codepen.io/melanieseltzer/pen/odOXWM"><i class="fab fa-lg fa-codepen"></i></a></span>
+    </div>
+  </div>
+</div>
+</div>
+
+</footer>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>
+
+<script>
+  window.addEventListener('resize', () => {
+  const divs = document.querySelectorAll(".menu-list");
+  if (window.innerWidth < 768){
+    divs.forEach(div => div.classList.add("tags"));
+  }
+  else {
+    divs.forEach(div => div.classList.remove("tags"));
+  }
+});
+
+  document.addEventListener("DOMContentLoaded", function() {
+	//The first argument are the elements to which the plugin shall be initialized
+	//The second argument has to be at least a empty object or a object with your desired options
+	OverlayScrollbars(document.querySelectorAll("body"), { });
+});
+
+</script>
+</body>
+</html>

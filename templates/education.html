@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>
+  Educación: 
+</h3>
+{% for education in educations %}
+        <div class="box">
+  <article class="media">
+    <div class="media-left">
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{education.name}} - {{education.school_name}}</strong>
+          <br>
+          <br>
+          {{education.start_year}} - {{education.end_year}}
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+{% endfor %}
+{% endblock content %}
+
+

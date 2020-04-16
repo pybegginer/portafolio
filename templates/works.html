@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>
+	Experiencia: 
+</h3>
+{% for work in works %}
+        <div class="box">
+  <article class="media">
+    <div class="media-left">
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>{{work.name}}</strong>
+          <br>
+          {{work.description}}
+          <br>
+          {{work.start_year}} - {{work.end_year}}
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+{% endfor %}
+{% endblock content %}
+
+
