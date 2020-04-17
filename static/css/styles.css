@@ -11,7 +11,10 @@ pre,
 li {margin: 10px}
 
 .hero.is-primary {
-background: #ed5353/*linear-gradient(to top right, #524ad0 10%, #D099FA);*/
+background-image: url('../images/banner.png');
+background-repeat: no-repeat;
+background-size: contain;
+height: 355px;
 
 }
 
